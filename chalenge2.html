@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/challenge2.css" type="text/css">
+    <title>JS Objects</title>
+</head>
+
+<body>
+    <div id="divquotebox">
+
+        <h1>Get Your Daily Quote</h1>
+        <p id="idquote"></p>
+        <p id="idauthor"></p>
+        <button id="btnClickMe">Click Me</button>
+
+    </div>
+
+
+    <script type="text/javascript">
+
+        //creating container 
+        function Container(quote, author) {
+            this.quote = quote,
+            this.author = author
+               
+        };
+
+
+        //creating objects using container
+        let quote1 = new Container("Life is like a piano. What you get out of it depends on how you play it", "-Albert Einstein");
+        let quote2 = new Container("If you are gonna stop learning then you are gonna start loosing", "-Ameer Batcha");
+        let quote3 = new Container("Happiness is like a butterfly; the more you chase it, the more it will elude you, but if you turn your attention to other things, it will come and sit softly on your shoulder", "-Henry David Thoreau");
+        let quote4 = new Container("The ones who are crazy enough to think that they can change the world, are the ones who do", "-Steve Jobs");
+        let quote5 = new Container("Only the dead have seen the end of the war", "-Plato");
+
+        //Creatin Array of objects (Referential Array)
+        const quotesource = [quote1, quote2, quote3, quote4, quote5];
+
+
+        //logic1
+        let i = 0;
+        document.getElementById("btnClickMe").onclick = function(){
+            i++;
+            if (i < quotesource.length) {
+                document.getElementById("idquote").innerHTML = quotesource[i].quote;
+                document.getElementById("idauthor").innerHTML = quotesource[i].author;
+            }
+            else {
+                i = 0;
+                document.getElementById("idquote").innerHTML = quotesource[i].quote;
+                document.getElementById("idauthor").innerHTML = quotesource[i].author;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
