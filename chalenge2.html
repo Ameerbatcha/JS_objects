@@ -24,8 +24,8 @@
         //creating container 
         function Container(quote, author) {
             this.quote = quote,
-            this.author = author
-               
+                this.author = author
+
         };
 
 
@@ -40,19 +40,14 @@
         const quotesource = [quote1, quote2, quote3, quote4, quote5];
 
 
-        //logic1
-        let i = 0;
-        document.getElementById("btnClickMe").onclick = function(){
-            i++;
-            if (i < quotesource.length) {
-                document.getElementById("idquote").innerHTML = quotesource[i].quote;
-                document.getElementById("idauthor").innerHTML = quotesource[i].author;
-            }
-            else {
-                i = 0;
-                document.getElementById("idquote").innerHTML = quotesource[i].quote;
-                document.getElementById("idauthor").innerHTML = quotesource[i].author;
-            }
+        //logic2
+        document.getElementById("btnClickMe").onclick = function () {
+
+            //creating a random value to be generated of array length
+            let randomno = Math.floor(Math.random()*quotesource.length) ;
+
+                document.getElementById("idquote").innerHTML = quotesource[randomno].quote;
+                document.getElementById("idauthor").innerHTML = quotesource[randomno].author;
         }
 
     </script>
